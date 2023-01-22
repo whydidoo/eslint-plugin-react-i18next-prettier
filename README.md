@@ -57,7 +57,7 @@ module.export = {
 
 ### Examples
 
-JS/Typescript coce:
+JS/Typescript code:
 ```jsx
 const fn = () => {
   return (<Trans>Test <span>span element</span></Trans>)
