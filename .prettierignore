@@ -1,0 +1,23 @@
+node_modules
+
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+*.md
+
+package.json
+*.json
+*.css
+
+*.yml
+*.sh
+
+public
+docs
+manifests
+public_site_sw
+iam_sw
+e2e

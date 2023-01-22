@@ -1,0 +1,89 @@
+{
+  "name": "eslint-plugin-react-i18next-prettier",
+  "version": "1.0.0",
+  "description": "Plugin resolves a conflict between a component <Tras><Trans> and prettier(max length) adding /*prettier-ignore*/ before the component.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install",
+    "pre-commit": "yarn test && lint-staged",
+    "prettier": "./node_modules/.bin/prettier \"*.{js,json,yml,yaml,md,ts,tsx}\" \"src/**/*\" --write",
+    "eslint": "./node_modules/.bin/eslint --max-warnings 0 src",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "react-i18next",
+    "i18next",
+    "i18n",
+    "eslin",
+    "eslint-plugin",
+    "reactjs",
+    "react"
+  ],
+  "author": {
+    "name": "Amir Saifutdinov",
+    "email": "wuskas47@gmail.com",
+    "url": "https://www.linkedin.com/in/amir-sayfutdinov-0364451aa/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/eslint": "^8.4.10",
+    "@types/estree": "^1.0.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-local-rules": "^1.3.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.32.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/types": "^5.48.2",
+    "@typescript-eslint/utils": "^5.48.2"
+  },
+  "lint-staged": {
+    "**/*.{ts, tsx}": [
+      "eslint",
+      "prettier"
+    ]
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(src/.*\\.spec)\\.ts$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "\\.d\\.ts$",
+      "lib/.*"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json"
+    ]
+  }
+}
