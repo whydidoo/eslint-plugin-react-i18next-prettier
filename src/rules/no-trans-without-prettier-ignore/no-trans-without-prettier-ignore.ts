@@ -26,7 +26,7 @@ import {
 
 const maybeReport = (
   node: JSXIdentifier,
-  context: Readonly<RuleContext<'trans', any[]>>
+  context: Readonly<RuleContext<'error', never[]>>
 ) => {
   const sourceCode = context.getSourceCode();
 
@@ -43,8 +43,8 @@ const maybeReport = (
 
     const report = () => {
       context.report({
-        messageId: 'trans',
-        node,
+        messageId: 'error',
+        node: transComponent,
         fix(fixer) {
           if (mainParent.type === AST_NODE_TYPES.AssignmentPattern) {
             return fixer.insertTextBefore(
@@ -144,34 +144,44 @@ const maybeReport = (
   }
 };
 
-export const noTransWithoutPrettierIgnore = ESLintUtils.RuleCreator.withoutDocs(
-  {
-    create(context) {
-      const nodes = new Set<JSXIdentifier>();
-
-      return {
-        "JSXOpeningElement > JSXIdentifier[name='Trans']": (
-          node: JSXIdentifier
-        ) => {
-          nodes.add(node);
-        },
-        'Program:exit': () => {
-          nodes.forEach((node) => {
-            maybeReport(node, context);
-          });
-
-          nodes.clear();
-        }
-      };
-    },
-    meta: {
-      messages: {
-        trans: "Don't use <Trans>"
-      },
-      fixable: 'code',
-      type: 'suggestion',
-      schema: []
-    },
-    defaultOptions: []
-  }
+const creator = ESLintUtils.RuleCreator(
+  () =>
+    'https://github.com/whydidoo/eslint-plugin-react-i18next-prettier#eslint-plugin-react-i18next-prettier--'
 );
+
+export const noTransWithoutPrettierIgnore = creator({
+  create(context) {
+    const nodes = new Set<JSXIdentifier>();
+
+    return {
+      "JSXOpeningElement > JSXIdentifier[name='Trans']": (
+        node: JSXIdentifier
+      ) => {
+        nodes.add(node);
+      },
+      'Program:exit': () => {
+        nodes.forEach((node) => {
+          maybeReport(node, context);
+        });
+
+        nodes.clear();
+      }
+    };
+  },
+  name: 'no-trans-without-prettier-ignore',
+  meta: {
+    messages: {
+      error:
+        '<Trans /> component is not prepended by /* prettier-ignore */.\n\nPlease, add {/* prettier-ignore */} or /* prettier-ignore */ in before. Missing /* prettier-ignore */ may affect the i18n strings when prettier changes the formatting of this layout code'
+    },
+    fixable: 'code',
+    type: 'suggestion',
+    schema: [],
+    docs: {
+      description:
+        '<Trans /> usage without /* prettier-ignore */ before it is not allowed',
+      recommended: 'error'
+    }
+  },
+  defaultOptions: []
+});
