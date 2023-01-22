@@ -2,11 +2,13 @@
   "name": "eslint-plugin-react-i18next-prettier",
   "version": "1.0.0",
   "description": "Plugin resolves a conflict between a component <Tras><Trans> and prettier(max length) adding /*prettier-ignore*/ before the component.",
+  "repository": "git+https://github.com/whydidoo/eslint-plugin-react-i18next-prettier.git",
+  "homepage": "https://github.com/whydidoo/eslint-plugin-react-i18next-prettier#readme",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
-    "pre-commit": "yarn test && lint-staged",
+    "pre-commit": "yarn test && yarn lint-staged",
     "prettier": "./node_modules/.bin/prettier \"*.{js,json,yml,yaml,md,ts,tsx}\" \"src/**/*\" --write",
     "eslint": "./node_modules/.bin/eslint --max-warnings 0 src",
     "clean": "rimraf lib",
@@ -25,7 +27,7 @@
   "author": {
     "name": "Amir Saifutdinov",
     "email": "wuskas47@gmail.com",
-    "url": "https://www.linkedin.com/in/amir-sayfutdinov-0364451aa/"
+    "url": "https://github.com/whydidoo"
   },
   "license": "MIT",
   "devDependencies": {
