@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-i18next-prettier-ignore",
-  "version": "1.1.1",
+  "version": "1.0.1",
   "description": "Plugin resolves a conflict between a component <Tras><Trans> and prettier(max length) adding /*prettier-ignore*/ before the component.",
   "repository": "git+https://github.com/whydidoo/eslint-plugin-react-i18next-prettier-ignore.git",
   "homepage": "https://github.com/whydidoo/eslint-plugin-react-i18next-prettier-ignore#readme",
@@ -13,8 +13,7 @@
     "eslint": "./node_modules/.bin/eslint --max-warnings 0 src",
     "clean": "rimraf lib",
     "build": "tsc",
-    "prepublish": "npm run clean && npm run build",
-    "release": "standard-version"
+    "prepublish": "yarn standard-version && yarn clean && yarn build"
   },
   "keywords": [
     "react-i18next",
