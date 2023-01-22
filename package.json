@@ -1,9 +1,9 @@
 {
-  "name": "eslint-plugin-react-i18next-prettier",
-  "version": "1.0.1",
+  "name": "eslint-plugin-react-i18next-prettier-ignore",
+  "version": "1.0.0",
   "description": "Plugin resolves a conflict between a component <Tras><Trans> and prettier(max length) adding /*prettier-ignore*/ before the component.",
-  "repository": "git+https://github.com/whydidoo/eslint-plugin-react-i18next-prettier.git",
-  "homepage": "https://github.com/whydidoo/eslint-plugin-react-i18next-prettier#readme",
+  "repository": "git+https://github.com/whydidoo/eslint-plugin-react-i18next-prettier-ignore.git",
+  "homepage": "https://github.com/whydidoo/eslint-plugin-react-i18next-prettier-ignore#readme",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
