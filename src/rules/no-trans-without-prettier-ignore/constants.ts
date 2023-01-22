@@ -5,7 +5,7 @@ export const RegPrettierWithCode =
   /({?\s?\/\*\s?prettier-ignore\s?\*\/\s?}?).*(\s*)?\(?<Trans(.|\s)*?>((.|\n|\r)*?)<\/Trans>\)?(\s+)?\)?/;
 
 export const RegPrettierForReturnStatement =
-  /({?\S?\/\*\s?prettier-ignore\s?\*\/\s?}?)(\s?return\s?)\(?(\s*)?\(?<Trans(.|\s)*?>((.|\n|\r)*?)<\/Trans>\)?(\s+)?\)?/;
+  /({?\S?\/\*\s?prettier-ignore\s?\*\/\s?}?)(\s+?(return)\s+?)\(?(\s*)?\(?<Trans(.|\s)*?>((.|\n|\r)*?)<\/Trans>\)?(\s+)?\)?/;
 export const RegPrettierForInline =
   /({?\s?\/\*\s?prettier-ignore\s?\*\/\s?}?)(\s|\s+)?\(?<Trans(.|\s)*?>((.|\n|\r)*?)<\/Trans>\)?(\s+)?\)?/;
 
