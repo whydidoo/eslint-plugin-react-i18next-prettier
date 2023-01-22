@@ -146,7 +146,7 @@ const maybeReport = (
 
 const creator = ESLintUtils.RuleCreator(
   () =>
-    'https://github.com/whydidoo/eslint-plugin-react-i18next-prettier#eslint-plugin-react-i18next-prettier--'
+    'https://github.com/whydidoo/eslint-plugin-react-i18next-prettier-ignore#readme'
 );
 
 export const noTransWithoutPrettierIgnore = creator({

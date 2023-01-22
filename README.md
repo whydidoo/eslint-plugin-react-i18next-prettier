@@ -37,9 +37,9 @@ Plugin resolves a [problem](https://github.com/i18next/react-i18next/issues/575)
 ```
 
 ### Installation
-```npm install eslint-plugin-react-i18next-prettier -D```
+```npm install eslint-plugin-react-i18next-prettier-ignore -D```
 
-```yarn add eslint-plugin-react-i18next-prettier -D```
+```yarn add eslint-plugin-react-i18next-prettier-ignore -D```
 ### Usage:
 
 The most important  need to use a plugin [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier) and should keep a order of rules.
@@ -47,9 +47,9 @@ The most important  need to use a plugin [eslint-plugin-prettier](https://www.np
 .eslintrc.js
 ```js
 module.export = {
-    plugin: ['another-plugin', 'prettier', 'react-i18next-prettier'],
+    plugin: ['another-plugin', 'prettier', 'react-i18next-prettier-ignore'],
     rules: {
-        'react-i18next-prettier/no-trans-without-prettier-ignore': 'error',
+        'react-i18next-prettier-ignore/no-trans-without-prettier-ignore': 'error',
         "prettier/prettier": "error"
     }
 }
