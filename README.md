@@ -1,4 +1,4 @@
-# [eslint](https://eslint.org/)-plugin-react-i18next-prettier &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/whydidoo/eslint-plugin-react-i18next-prettier/blob/master//LICENSE) 
+# [eslint](https://eslint.org/)-plugin-react-i18next-prettier-ignore &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/whydidoo/eslint-plugin-react-i18next-prettier/blob/master//LICENSE) 
 
 ### Description
 
