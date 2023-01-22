@@ -3,7 +3,7 @@ import {
   PRETTIER_IGNORE_CODE,
   PRETTIER_IGNORE_CODE_INLINE,
   PRETTIER_IGNORE_JSX_FIX
-} from '../contants';
+} from '../constants';
 
 import { noTransWithoutPrettierIgnore } from '../no-trans-without-prettier-ignore';
 

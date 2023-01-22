@@ -14,7 +14,7 @@ import {
   RegPrettierForInline,
   RegPrettierForReturnStatement,
   RegPrettierWithCode
-} from './contants';
+} from './constants';
 
 import {
   getInfoPrettier,
